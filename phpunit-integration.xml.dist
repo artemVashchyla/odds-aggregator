@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Opt-in suite that talks to the real upstream feeds.
+
+	Separate from phpunit.xml.dist because it needs a different bootstrap: the
+	same WordPress stand-ins, but with outbound HTTP left real. Run it with
+	"composer test:integration"; without the relevant credentials in the
+	environment each test skips itself.
+-->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+	bootstrap="tests/integration-bootstrap.php"
+	cacheDirectory=".phpunit.cache"
+	colors="true"
+	beStrictAboutOutputDuringTests="true"
+	failOnWarning="true">
+	<testsuites>
+		<testsuite name="integration">
+			<directory>tests/Integration</directory>
+		</testsuite>
+	</testsuites>
+	<source>
+		<include>
+			<directory suffix=".php">src</directory>
+		</include>
+	</source>
+</phpunit>

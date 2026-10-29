@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<ruleset name="Odds Aggregator">
+	<description>Coding standard for the Odds Aggregator plugin.</description>
+
+	<file>odds-aggregator.php</file>
+	<file>src</file>
+	<file>tests</file>
+
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/build/*</exclude-pattern>
+	<!-- Define stand-ins for WordPress functions; intentionally unprefixed. -->
+	<exclude-pattern>tests/bootstrap.php</exclude-pattern>
+	<exclude-pattern>tests/http-live.php</exclude-pattern>
+
+	<arg name="extensions" value="php"/>
+	<arg name="parallel" value="8"/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+
+	<rule ref="WordPress">
+		<!-- PSR-4 autoloading: filenames are ClassName.php, not class-name.php. -->
+		<exclude name="WordPress.Files.FileName"/>
+
+		<!--
+			Properties on third-party objects (DOMNode::$textContent and friends)
+			are named by PHP, not by us, so snake_case cannot apply.
+		-->
+		<exclude name="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase"/>
+	</rule>
+
+	<!--
+		Tests read saved fixtures off disk. This sniff is aimed at fetching
+		remote URLs, which is what wp_remote_get() is for; src/ still obeys it.
+	-->
+	<rule ref="WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents">
+		<exclude-pattern>tests/*</exclude-pattern>
+	</rule>
+
+	<!--
+		A test that supplies its own data file writes it to a temporary path and
+		removes it again. WP_Filesystem is a WordPress runtime concern and is not
+		loaded under PHPUnit; src/ still obeys both sniffs.
+	-->
+	<rule ref="WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents">
+		<exclude-pattern>tests/*</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.WP.AlternativeFunctions.unlink_unlink">
+		<exclude-pattern>tests/*</exclude-pattern>
+	</rule>
+
+	<config name="minimum_wp_version" value="6.3"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="odds-aggregator"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="odds_aggregator"/>
+				<element value="OddsAggregator"/>
+				<element value="ODDS_AGGREGATOR"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>

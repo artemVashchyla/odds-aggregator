@@ -1,0 +1,56 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "odds-aggregator/odds-table",
+	"version": "1.0.0",
+	"title": "Odds Table",
+	"category": "widgets",
+	"icon": "editor-table",
+	"description": "Compare odds for an event across bookmakers.",
+	"keywords": [ "odds", "betting", "bookmaker", "comparison" ],
+	"textdomain": "odds-aggregator",
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"eventId": {
+			"type": "string",
+			"default": ""
+		},
+		"markets": {
+			"type": "array",
+			"default": [],
+			"items": { "type": "string" }
+		},
+		"bookmakers": {
+			"type": "array",
+			"default": [],
+			"items": { "type": "string" }
+		},
+		"format": {
+			"type": "string",
+			"default": ""
+		},
+		"highlightBest": {
+			"type": "boolean",
+			"default": true
+		},
+		"highlightWorst": {
+			"type": "boolean",
+			"default": false
+		},
+		"showSwitcher": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

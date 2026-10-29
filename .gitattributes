@@ -1,0 +1,4 @@
+# The repository stores LF. Without this, a Windows checkout with
+# core.autocrlf=true rewrites every file to CRLF and the
+# Generic.Files.LineEndings sniff then fails on untouched files.
+* text=auto eol=lf

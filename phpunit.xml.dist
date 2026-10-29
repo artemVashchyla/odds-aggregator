@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+	bootstrap="tests/bootstrap.php"
+	cacheDirectory=".phpunit.cache"
+	colors="true"
+	executionOrder="depends,defects"
+	beStrictAboutOutputDuringTests="true"
+	failOnRisky="true"
+	failOnWarning="true">
+	<testsuites>
+		<!-- Mirrors src/: tests/Unit/<Layer>/<Class>Test.php. The integration
+		     suite lives in phpunit-integration.xml.dist, because it needs a
+		     bootstrap that leaves outbound HTTP real. -->
+		<testsuite name="unit">
+			<directory>tests/Unit</directory>
+		</testsuite>
+	</testsuites>
+	<source>
+		<include>
+			<directory suffix=".php">src</directory>
+		</include>
+		<exclude>
+			<!-- WordPress wiring: menus, hooks and markup with no logic of its
+			     own, exercised by hand against wp-env rather than measured. -->
+			<file>src/Admin/SettingsPage.php</file>
+			<file>src/Blocks/BlockRegistrar.php</file>
+			<file>src/Plugin.php</file>
+		</exclude>
+	</source>
+</phpunit>

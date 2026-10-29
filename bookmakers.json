@@ -1,0 +1,134 @@
+{
+	"bet365": {
+		"name": "bet365",
+		"url": "https://www.bet365.com",
+		"region": "uk",
+		"logo": "bet365.png"
+	},
+	"williamhill": {
+		"name": "William Hill",
+		"url": "https://www.williamhill.com",
+		"region": "uk",
+		"logo": "williamhill.png"
+	},
+	"paddypower": {
+		"name": "Paddy Power",
+		"url": "https://www.paddypower.com",
+		"region": "uk",
+		"logo": "paddypower.ico"
+	},
+	"betfair": {
+		"name": "Betfair",
+		"url": "https://www.betfair.com",
+		"region": "uk",
+		"logo": "betfair.ico"
+	},
+	"ladbrokes": {
+		"name": "Ladbrokes",
+		"url": "https://www.ladbrokes.com",
+		"region": "uk",
+		"logo": "ladbrokes.png"
+	},
+	"coral": {
+		"name": "Coral",
+		"url": "https://www.coral.co.uk",
+		"region": "uk",
+		"logo": "coral.png"
+	},
+	"skybet": {
+		"name": "Sky Bet",
+		"url": "https://www.skybet.com",
+		"region": "uk",
+		"logo": "skybet.ico"
+	},
+	"unibet": {
+		"name": "Unibet",
+		"url": "https://www.unibet.co.uk",
+		"region": "uk",
+		"logo": "unibet.png"
+	},
+	"betvictor": {
+		"name": "BetVictor",
+		"url": "https://www.betvictor.com",
+		"region": "uk",
+		"logo": "betvictor.png"
+	},
+	"betway": {
+		"name": "Betway",
+		"url": "https://www.betway.com",
+		"region": "uk",
+		"logo": ""
+	},
+	"fanduel": {
+		"name": "FanDuel",
+		"url": "https://sportsbook.fanduel.com",
+		"region": "us",
+		"logo": "fanduel.ico"
+	},
+	"draftkings": {
+		"name": "DraftKings",
+		"url": "https://sportsbook.draftkings.com",
+		"region": "us",
+		"logo": "draftkings.png"
+	},
+	"betmgm": {
+		"name": "BetMGM",
+		"url": "https://sports.betmgm.com",
+		"region": "us",
+		"logo": "betmgm.png"
+	},
+	"caesars": {
+		"name": "Caesars",
+		"url": "https://www.caesars.com/sportsbook-and-casino",
+		"region": "us",
+		"logo": "caesars.ico"
+	},
+	"fanatics": {
+		"name": "Fanatics",
+		"url": "https://sportsbook.fanatics.com",
+		"region": "us",
+		"logo": "fanatics.png"
+	},
+	"betrivers": {
+		"name": "BetRivers",
+		"url": "https://www.betrivers.com",
+		"region": "us",
+		"logo": "betrivers.png"
+	},
+	"borgata": {
+		"name": "Borgata",
+		"url": "https://sports.borgataonline.com",
+		"region": "us",
+		"logo": ""
+	},
+	"betonlineag": {
+		"name": "BetOnline.ag",
+		"url": "https://www.betonline.ag",
+		"region": "us",
+		"logo": "betonlineag.png"
+	},
+	"betus": {
+		"name": "BetUS",
+		"url": "https://www.betus.com.pa",
+		"region": "us",
+		"logo": "betus.png"
+	},
+	"bovada": {
+		"name": "Bovada",
+		"url": "https://www.bovada.lv",
+		"region": "us",
+		"logo": "bovada.png"
+	},
+	"lowvigag": {
+		"name": "LowVig.ag",
+		"url": "https://www.lowvig.ag",
+		"region": "us",
+		"logo": ""
+	},
+	"mybookieag": {
+		"name": "MyBookie.ag",
+		"url": "https://www.mybookie.ag",
+		"region": "us",
+		"logo": "mybookieag.png"
+	}
+}

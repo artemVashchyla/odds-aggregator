@@ -1,0 +1,45 @@
+{
+	"name": "odds-aggregator",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Live odds comparison from multiple bookmakers.",
+	"license": "GPL-2.0-or-later",
+	"engines": {
+		"node": ">=22.22.2"
+	},
+	"scripts": {
+		"start": "wp-scripts start --webpack-src-dir=blocks --output-path=build",
+		"build": "wp-scripts build --webpack-src-dir=blocks --output-path=build",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"lint:js": "wp-scripts lint-js blocks assets",
+		"env:start": "wp-env start",
+		"env:demo": "npx wp-env run cli --env-cwd=wp-content/plugins/$(basename \"$PWD\") wp eval-file bin/demo-seed.php",
+		"env:stop": "wp-env stop",
+		"env:cli": "wp-env run cli wp",
+		"lint:css": "wp-scripts lint-style \"blocks/**/*.scss\" \"assets/*.css\""
+	},
+	"devDependencies": {
+		"@wordpress/env": "^12.0.0",
+		"@wordpress/scripts": "^37.0.0"
+	},
+	"dependencies": {
+		"@wordpress/api-fetch": "^8.0.0",
+		"@wordpress/block-editor": "^19.0.0",
+		"@wordpress/blocks": "^17.0.0",
+		"@wordpress/components": "^43.0.0",
+		"@wordpress/element": "^10.0.0",
+		"@wordpress/i18n": "^7.0.0",
+		"@wordpress/server-side-render": "^7.0.0"
+	},
+	"files": [
+		"odds-aggregator.php",
+		"bookmakers.json",
+		"readme.txt",
+		"composer.json",
+		"src",
+		"assets",
+		"build",
+		"vendor/autoload.php",
+		"vendor/composer"
+	]
+}
